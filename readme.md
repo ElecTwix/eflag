@@ -4,7 +4,7 @@ Created flag parser for my own needs
 it is not prod ready please be careful if you use it.
 
 ### Goals
-- [] Required Flags
+- [ ] Required Flags
 - [x] Non Value Inputs
 - [x] Value Inputs
 - [x] Error Handling Wrong Type Input
