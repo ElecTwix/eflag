@@ -100,3 +100,19 @@ func TestWrongValue(t *testing.T) {
 		t.Fatal("should give error when parse float to int")
 	}
 }
+
+func TestFlagErrWithoutValue(t *testing.T) {
+	handler := eflag.New()
+	testVal := 10
+	err := handler.AddFlag(flag.New("test", testVal).AddInput(reflect.Int))
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	args := []string{"./binary", "-test"}
+
+	_, err = handler.ParseRaw(args[1:])
+	if err == nil {
+		t.Fatal("should give error when parse float to int")
+	}
+}
